@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.Random;
 import java.time.LocalDate;
 
 public class CarRentalService {
@@ -13,7 +14,7 @@ public class CarRentalService {
 
     public CarRentalService()
     {
-        cars = InitCars();
+        cars = InitCars(5);
     }
 
     public void addCar(Car car) {
@@ -38,10 +39,8 @@ public class CarRentalService {
             
             Car car = new Car(id, price, randomBrand, randomType);
             car.isAvailable = true;
-            carList.add(car);
+            cars.add(car);
         }
-
-        return carList;
     }
     
 
@@ -64,7 +63,7 @@ public class CarRentalService {
     {
         Map<Car, Double> map = new HashMap<>();
         cars.stream()
-            .filter(car -> car.isAvailable())
+            .filter(car -> car.isAvailable == true)
             .forEach(car -> map.put(car, calculateScore(customer, car)));
 
         Optional<Map.Entry<Car, Double>> bestMatch = 

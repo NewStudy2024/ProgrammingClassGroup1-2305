@@ -1,6 +1,3 @@
-public enum Brand {
-    TOYOTA,
-    FERRARI,
-    BMW
-
+public class Brand {
+    
 }
