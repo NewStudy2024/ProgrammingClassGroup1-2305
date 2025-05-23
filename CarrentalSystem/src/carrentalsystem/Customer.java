@@ -11,7 +11,7 @@ public class Customer {
         this.lastName = lastName;
         this.FavoriteBrand = favoriteBrand;
         this.FavoriteCarType = favoriteCarType;
-        this.rentalDuration = 24 + (int)(Math.random() * 48); // Random rental duration between 24-72 hours
+        this.rentalDuration = 24 + (int)(Math.random() * 48);
     }
     public String getFullName() {
         return firstName + " " + lastName;
